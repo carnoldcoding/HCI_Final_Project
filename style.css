@@ -1,0 +1,13 @@
+body{
+    background-color: white;
+    margin:auto;
+    padding:20px;
+    width:90%;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+#title{
+    text-align:left;
+    display:inline-block;
+    font-size:20px;
+}
