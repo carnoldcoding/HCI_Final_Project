@@ -6,14 +6,14 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif
 }
 
-#title{
+.title{
     display:inline-block;
     font-size:25px;
     margin-bottom: 10px;
     margin-right:20px;
 }
 
-#url-bar{
+.url-bar{
     display:inline-block;
     margin-top: 30px;
     margin: 5px auto;
@@ -35,7 +35,7 @@ input[type="text"]{
     opacity: 1;
 }
 
-#tagline{
+.tagline{
     /* margin: 2px auto; */
     font-size: 20px;
 }
@@ -43,3 +43,41 @@ input[type="text"]{
 /* input[type=text]:focus {
     
 } */
+
+.page-title{
+    font-size:20px;
+    margin-bottom: 10px;
+}
+
+.page-box{
+    display:inline-block;
+    background-color: rgb(236, 236, 236);
+	border: 2px solid #086788;
+    border-radius: 2px;
+    margin: 5px;
+    padding: 5px;
+    width:40%;
+    font-size:15px;
+    overflow-y:scroll;
+}
+
+.download{
+    background-color: #666666;
+    color:white;
+}
+
+.images-box{
+    display:flex;
+    padding:5px;
+    margin:5px;
+    width:40%;
+    overflow-x:scroll;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.image{
+    display:flex;
+    padding:5px;
+
+}
