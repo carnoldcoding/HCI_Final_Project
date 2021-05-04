@@ -101,3 +101,23 @@ input[type="text"]{
     position: relative;
     overflow-y: scroll;
     height: 200px; }
+
+
+
+/****** SELECTION CSS *******/
+#selector-top, #selector-bottom {
+	background: blue;
+	height:3px;
+	position: fixed;
+	transition:all 300ms ease;
+}
+#selector-left, #selector-right {
+	background: blue;
+	width:3px;
+	position: fixed;
+	transition:all 300ms ease; /* Gives sliding effect */
+}
+
+.n{
+ -webkit-transform: scale(3) translateX(100px)   /* not supported on Edge or IE */
+}
