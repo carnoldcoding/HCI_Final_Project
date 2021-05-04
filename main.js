@@ -1,10 +1,8 @@
 //JQuery control functions
 $(document).ready(function(){
 
-    $(".url-bar").submit(function() {
-        console.log("form submitted");
-        //TODO do stuff
-    });
+    // $(".url-bar").submit(function() {
+    // });
 
 });
 

@@ -35,16 +35,16 @@ input[type="text"]{
     opacity: 1;
 }
 
-.tagline{
-    /* margin: 2px auto; */
+/* .tagline{
+    /* margin: 2px auto;
     font-size: 20px;
-}
+} */
 
 /* input[type=text]:focus {
     
 } */
 
-.page-title{
+/* .page-title{
     font-size:20px;
     margin-bottom: 10px;
 }
@@ -59,12 +59,12 @@ input[type="text"]{
     width:40%;
     font-size:15px;
     overflow-y:scroll;
-}
+} */
 
-.download{
+/* .download{
     background-color: #666666;
-    color:white;
-}
+    color:white; */
+/* }
 
 .images-box{
     display:flex;
@@ -78,9 +78,9 @@ input[type="text"]{
 
 .image{
     display:flex;
-    padding:5px;
+    padding:5px; 
 
-}
+}*/
 
     .scrollbar-ripe-malinka::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
