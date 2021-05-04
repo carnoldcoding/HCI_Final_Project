@@ -15,34 +15,23 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
 </head>
 
 <body>
-    <div class="title">ELEMENT SCRAPER</div>
 
-    <form class="url-bar">
-        <input type="text" id="url" name="url" placeholder="URL of Website.."><br>
-    </form>
-
-    <br>
-    <div class="tagline">Scraping content made easy!</div>
-
-    <div class="page-title">Title of Page</div>
-    <div class="page-box">
-        This is where the text will go
-    </div>
-
-    <div class="images-box">
-        <div class="image">an image</div>
-        <div class="image">second image</div>
-        <div class="image">third image</div>
-    </div>
-
-    <!-- can change this to a button element if that's easier -->
-    <div class="download">Download as
-
+    <div class="container" style = "background-color:#92768f">
+        <div class="text-center">
+            <div class = "row-center">
+            <!-- Logo and Initial Menu -->
+            <img src = "./images/Element Scraper.png" height=200px>
+            </div>
+            <div class = "row">
+            <form class="url-bar" action="scrapePage.html">
+                <input type="text" id="url" name="url" placeholder="URL of Website.."><br>
+                <button type ="submit" id="scrape" class="btn btn-primary">Scrape</button>
+            </form>
+            </div>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
