@@ -138,15 +138,14 @@ $(document).ready(function(){
 
     
     imgDL = function imgDL(){
-        console.log("imgdl");
-        console.log(selectedImgs);
 
         var i = 1;
+
         selectedImgs.forEach(function(selectedImgs){
               //https://stackoverflow.com/questions/17311645/download-image-with-javascript
             // var a = $("<a>")
             //     .attr("href", selectedImgs)
-            //     .attr("download", String(i).concat(".jpeg"))
+            //     .attr("download", String(i).concat(".jpg"))
             //     .appendTo("body");
         
             // a[0].click();
@@ -154,7 +153,7 @@ $(document).ready(function(){
 
             //https://stackoverflow.com/questions/283956/is-there-any-way-to-specify-a-suggested-filename-when-using-data-uri/16523173#16523173
             var link = document.createElement('a');
-            link.download = String(i).concat(".jpeg");
+            link.download = String(i).concat(".jpg");
             link.href = 'data:,' + selectedImgs;
             link.click();
             link.remove();
