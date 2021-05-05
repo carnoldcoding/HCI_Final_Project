@@ -1,17 +1,21 @@
 //JQuery control functions
 $(document).ready(function(){
+    var selected = {};
 
-    // $(".url-bar").submit(function() {
-    // });
-
+    //Hover effect
     $(document).mousemove(function(event){
         var id = event.target.id;
         var tagName = event.target.tagName;
 
-        // ignore certain basic elements
+        // ignore certain elements
         if(id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML') { 
             return;
         } 
+
+        // if (tagName !== "IMG" || tagName !== "P" || tagName !== "H4" || tagName !== "H5" ){
+        //     return;
+        // }
+
 
         //these elements form the sides of the outline around targeted/selected elements
         var elements = {                  
@@ -55,10 +59,35 @@ $(document).ready(function(){
         });
 
 
-        //TODO follow the instructions, make it so if user clicks on targeted element, that element gets a gray outline or something
+        //TODO make it so if user clicks on targeted element, that element gets a gray outline or something
 
 
     });
+
+    $(document).click(function(event){
+        var id = event.target.id;
+        var tagName = event.target.tagName;
+
+        // ignore certain elements
+        if(id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML') { 
+            return;
+        } 
+
+        var selected = $(event.target).hasClass('selected');
+
+        var isClickable = false;
+        if ($(event.target).parent().hasClass("card-body") && id != "section1") isClickable = true;     //checks to see if clicked element is part of the webpage they're scraping        
+
+        if (!selected && isClickable){                     //user clicked unselected element, so it's now selected. 
+            $(event.target).addClass('selected');
+
+        }
+        else {                                              //user clicked selected element, so it's deselected
+            $(event.target).removeClass('selected');    
+        }
+
+    });    
+
 
 });
 
