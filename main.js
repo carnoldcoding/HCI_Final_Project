@@ -11,6 +11,10 @@ $(document).ready(function(){
             return;
         } 
 
+        if (!$(event.target).parent().hasClass("card-body")){
+            return;
+        }
+
         // if (tagName !== "IMG" || tagName !== "P" || tagName !== "H4" || tagName !== "H5" ){
         //     return;
         // }
@@ -92,13 +96,13 @@ $(document).ready(function(){
             if (tagName === "IMG"){
                 var index = selectedImgs.indexOf($(event.target).attr('src'));
                 if (index > -1) {
-                    array.splice(index, 1);
+                    selectedImgs.splice(index, 1);
                   }
             }
             if (tagName === "P" || tagName === "H5"){
                 var index = selectedText.indexOf($(event.target).html());
                 if (index > -1) {
-                    array.splice(index, 1);
+                    selectedText.splice(index, 1);
                   }
 
             }
