@@ -88,7 +88,8 @@
                 </form>
             </div>
             <div class="col">
-                <form method="get" action="https://picsum.photos/150?random=6">
+                <!-- <form method="get" action="https://picsum.photos/150?random=6"> -->
+                <form onsubmit="doImgDL()">
                     <button type="submit" class="btn btn-primary">Download Images</button>
                 </form>
             </div>
@@ -106,6 +107,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <!-- these don't work? <script type="text/javascript" src="//stuk.github.io/jszip/dist/jszip.js"></script>
+    <script type="text/javascript" src="//stuk.github.io/jszip-utils/dist/jszip-utils.js"></script>
+    <script type="text/javascript" src="//stuk.github.io/jszip/vendor/FileSaver.js"></script> -->
 </body>
 
 </html>

@@ -87,8 +87,21 @@ $(document).ready(function(){
             }
             
         }
-        else {                                              //user clicked selected element, so it's deselected
+        else {                                              //user clicked selected element, so it's deselected & removed from download list
             $(event.target).removeClass('selected');    
+            if (tagName === "IMG"){
+                var index = selectedImgs.indexOf($(event.target).attr('src'));
+                if (index > -1) {
+                    array.splice(index, 1);
+                  }
+            }
+            if (tagName === "P" || tagName === "H5"){
+                var index = selectedText.indexOf($(event.target).html());
+                if (index > -1) {
+                    array.splice(index, 1);
+                  }
+
+            }
         }
 
     });    
@@ -117,8 +130,56 @@ $(document).ready(function(){
         fileDownload.download = 'text.doc';
         fileDownload.click();
         document.body.removeChild(fileDownload);
-     }
+    }
 
+    
+    imgDL = function imgDL(){
+        console.log("imgdl");
+        console.log(selectedImgs);
+
+        var i = 1;
+        selectedImgs.forEach(function(selectedImgs){
+              //https://stackoverflow.com/questions/17311645/download-image-with-javascript
+            // var a = $("<a>")
+            //     .attr("href", selectedImgs)
+            //     .attr("download", String(i).concat(".jpeg"))
+            //     .appendTo("body");
+        
+            // a[0].click();
+            // a.remove();
+
+            //https://stackoverflow.com/questions/283956/is-there-any-way-to-specify-a-suggested-filename-when-using-data-uri/16523173#16523173
+            var link = document.createElement('a');
+            link.download = String(i).concat(".jpeg");
+            link.href = 'data:,' + selectedImgs;
+            link.click();
+            link.remove();
+        
+            i++;
+        });
+    }
+
+//This uses JSZip.js, JSZip-Utils.js, and FileSaver.js but they dont load correctly and crash for some reason
+        // var zip = new JSZIP();
+        // var count = 0;
+        
+        // //https://gist.github.com/c4software/981661f1f826ad34c2a5dc11070add0f
+        // selectedImgs.forEach(function(selectedImgs){
+        //     var filename = count;
+        //     // loading a file and add it in a zip file
+        //     JSZipUtils.getBinaryContent(selectedImgs, function (err, data) {
+        //        if(err) {
+        //           throw err; // or handle the error
+        //        }
+        //        zip.file(filename, data, {binary:true});
+        //        count++;
+        //        if (count == urls.length) {
+        //          zip.generateAsync({type:'blob'}).then(function(content) {
+        //             saveAs(content, "imgs.zip");
+        //          });
+        //       }
+        //     });
+        // });
 
 });
 
@@ -134,6 +195,12 @@ var exportHTML;
 
 function doExport(){
     exportHTML();
+}
+
+var imgDL;
+
+function doImgDL(){
+    imgDL();
 }
 
 
