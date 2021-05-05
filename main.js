@@ -1,6 +1,5 @@
 //JQuery control functions
 $(document).ready(function(){
-    var selected = {};
 
     //Hover effect
     $(document).mousemove(function(event){
@@ -8,7 +7,7 @@ $(document).ready(function(){
         var tagName = event.target.tagName;
 
         // ignore certain elements
-        if(id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML') { 
+        if(id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML' || tagName ==='I' || tagName ==='B') { 
             return;
         } 
 
@@ -57,13 +56,12 @@ $(document).ready(function(){
             top:    (targetOffset.top  - 4),
             height: (targetHeight + 8)
         });
-
-
-        //TODO make it so if user clicks on targeted element, that element gets a gray outline or something
-
-
     });
 
+    var selectedText = [];
+    var selectedImgs = [];
+
+    //Selecting elements
     $(document).click(function(event){
         var id = event.target.id;
         var tagName = event.target.tagName;
@@ -80,13 +78,46 @@ $(document).ready(function(){
 
         if (!selected && isClickable){                     //user clicked unselected element, so it's now selected. 
             $(event.target).addClass('selected');
-
+            //Adding element to arrays for later download
+            if (tagName === "IMG"){
+                selectedImgs.push($(event.target).attr('src'));
+            }
+            if (tagName === "P" || tagName === "H5"){
+                selectedText.push($(event.target).html());
+            }
+            
         }
         else {                                              //user clicked selected element, so it's deselected
             $(event.target).removeClass('selected');    
         }
 
     });    
+
+    //https://phppot.com/javascript/how-to-export-html-to-word-document-with-javascript/
+    //https://qawithexperts.com/article/javascript/convert-html-to-word-with-images-using-javascript-or-using-j/251
+    exportHTML = function exportHTML(){
+        var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+             "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+             "xmlns='http://www.w3.org/TR/REC-html40'>"+
+             "<head><meta charset='utf-8'></head><body>";
+
+        var footer = "</body></html>";
+        var fullHTML = header;
+
+        var i;
+        for (i = 0; i < selectedText.length; i++){
+            fullHTML+=selectedText[i]+ "<br>";
+        }
+        fullHTML+=footer;
+        
+        var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(fullHTML);
+        var fileDownload = document.createElement("a");
+        document.body.appendChild(fileDownload);
+        fileDownload.href = source;
+        fileDownload.download = 'text.doc';
+        fileDownload.click();
+        document.body.removeChild(fileDownload);
+     }
 
 
 });
@@ -98,5 +129,11 @@ $('input').keypress(function(event) {
         $(".url-bar").submit();
     }
 });
+
+var exportHTML;
+
+function doExport(){
+    exportHTML();
+}
 
 
