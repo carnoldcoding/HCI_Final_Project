@@ -8,7 +8,8 @@ $(document).ready(function(){
 
         // ignore certain elements
         if(id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML' || tagName ==='I'
-         || tagName ==='B' || !$(event.target).parent().hasClass("card-body") || id === "section1") { 
+         || tagName ==='B' || !$(event.target).parent().hasClass("card-body") || id === "section1"
+         || $(event.target).hasClass("row-center")) { 
             return;
         } 
 
@@ -64,7 +65,7 @@ $(document).ready(function(){
         var tagName = event.target.tagName;
 
         // ignore certain elements
-        if(id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML') { 
+        if(id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML' || $(event.target).hasClass("row-center")) { 
             return;
         } 
 
