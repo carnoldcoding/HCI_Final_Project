@@ -8,10 +8,9 @@ Color palette:
 */
 
 body{
-    background-color: white;
-    margin:auto;
-    padding:20px;
-    width:90%;
+    background-color: #b4b4b4 !important; /* Seems like bootstrap forces it to be white so need the important again */
+    /* margin:auto; */
+    /* padding:5px; */
     font-family: Georgia, 'Times New Roman', Times, serif
 }
 
@@ -44,6 +43,14 @@ input[type="text"]{
     opacity: 1;
 }
 
+img {
+    margin: 5px;
+}
+
+#section1 {
+ width:45%;
+ border-bottom: solid #b4b4b4 1px;
+}
 
 /****** Bootstrap customization *****/
 .scrollbar-ripe-malinka::-webkit-scrollbar-track {
@@ -66,19 +73,28 @@ position: relative;
 overflow-y: scroll;
 height: 400px; }
 
+.container {
+    max-width:1400px !important;   /* Forcefully override bootstrap's max width settings so that it fills more of the screen in large displays */
+    border-radius:5px;
+}
+
+.btn {
+    margin-bottom: 15px;
+}
+
 /****** SELECTION CSS *******/
 #selector-top, #selector-bottom {
-	background: blue;
+	background: #086788;
 	height:3px;
 	position: fixed;
 	transition:all 300ms ease; /* Gives sliding effect */
     z-index: 1; /* Ensures selector is always visible */
 }
 #selector-left, #selector-right {
-	background: blue;
+	background: #086788;
 	width:3px;
 	position: fixed;
-	transition:all 300ms ease; 
+	transition:all 280ms ease; 
     z-index: 1;
 }
 
@@ -89,6 +105,5 @@ height: 400px; }
 .selected {
     border-style:dotted;
     border-color: #ABC8C0;
-    border-width: 2px;
-    z-index:1;
+    border-width: 3.5px;
 }

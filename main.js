@@ -7,18 +7,10 @@ $(document).ready(function(){
         var tagName = event.target.tagName;
 
         // ignore certain elements
-        if(id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML' || tagName ==='I' || tagName ==='B') { 
+        if(id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML' || tagName ==='I'
+         || tagName ==='B' || !$(event.target).parent().hasClass("card-body") || id === "section1") { 
             return;
         } 
-
-        if (!$(event.target).parent().hasClass("card-body")){
-            return;
-        }
-
-        // if (tagName !== "IMG" || tagName !== "P" || tagName !== "H4" || tagName !== "H5" ){
-        //     return;
-        // }
-
 
         //these elements form the sides of the outline around targeted/selected elements
         var elements = {                  
@@ -62,6 +54,7 @@ $(document).ready(function(){
         });
     });
 
+    //arrays for storing selected elements for later
     var selectedText = [];
     var selectedImgs = [];
 
@@ -77,8 +70,9 @@ $(document).ready(function(){
 
         var selected = $(event.target).hasClass('selected');
 
+        //check to see if clicked element is part of the webpage they're scraping (so inside the card boxes)
         var isClickable = false;
-        if ($(event.target).parent().hasClass("card-body") && id != "section1") isClickable = true;     //checks to see if clicked element is part of the webpage they're scraping        
+        if ($(event.target).parent().hasClass("card-body") && id != "section1") isClickable = true;             
 
         if (!selected && isClickable){                     //user clicked unselected element, so it's now selected. 
             $(event.target).addClass('selected');
