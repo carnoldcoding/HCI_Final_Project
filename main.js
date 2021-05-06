@@ -191,7 +191,9 @@ $('input').keypress(function(event) {
 var exportHTML;
 
 function doExport(){
-    exportHTML();
+    if (selectedText.length > 0){
+        exportHTML();
+    }
 }
 
 var imgDL;
