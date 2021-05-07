@@ -8,7 +8,8 @@ $(document).ready(function(){
 
         // ignore certain elements
         if(id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML' || tagName ==='I'
-         || tagName ==='B' || !$(event.target).parent().hasClass("card-body") || id === "section1") { 
+         || tagName ==='B' || !$(event.target).parent().hasClass("card-body") || id === "section1"
+         || $(event.target).hasClass("row-center")) { 
             return;
         } 
 
@@ -64,7 +65,7 @@ $(document).ready(function(){
         var tagName = event.target.tagName;
 
         // ignore certain elements
-        if(id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML') { 
+        if(id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML' || $(event.target).hasClass("row-center")) { 
             return;
         } 
 
@@ -107,6 +108,9 @@ $(document).ready(function(){
     //https://phppot.com/javascript/how-to-export-html-to-word-document-with-javascript/
     //https://qawithexperts.com/article/javascript/convert-html-to-word-with-images-using-javascript-or-using-j/251
     exportHTML = function exportHTML(){
+        if (selectedText.length <= 0){
+            return;
+        }
         var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
              "xmlns:w='urn:schemas-microsoft-com:office:word' "+
              "xmlns='http://www.w3.org/TR/REC-html40'>"+
@@ -191,9 +195,7 @@ $('input').keypress(function(event) {
 var exportHTML;
 
 function doExport(){
-    if (selectedText.length > 0){
-        exportHTML();
-    }
+    exportHTML();
 }
 
 var imgDL;
