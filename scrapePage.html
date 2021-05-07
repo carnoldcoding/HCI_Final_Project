@@ -181,21 +181,21 @@
                                         <tbody>
                                             <tr>
                                                 <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
+                                                <td>Joe</td>
+                                                <td>Biden</td>
+                                                <td>@POTUS</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
+                                                <td>John</td>
+                                                <td>Austin</td>
+                                                <td>@tweeter</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
+                                                <td>Kevin</td>
+                                                <td>Carter</td>
+                                                <td>@Kevin</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -217,8 +217,27 @@
                             </div>
 
                         </div>
-                        <div class="row">
+                        <br>
 
+                        <div class="row">
+                            <div class="col text-center label-thing">
+                                <label for="Table-Select"><b>Parse For:</b></label>
+                                <select name="Table-Select" id="Table-Select">
+                                    <option value="volvo">Titles</option>
+                                    <option value="saab">Names</option>
+                                    <option value="audi">Links</option>
+                                    <option value="mercedes">Numbers</option>
+                                    <option value="audi">Dollar Amounts</option>
+                                </select>
+                                <br>
+                                <form onsubmit="doExport()">
+                                    <button type="submit" class="btn btn-primary">Parse</button>
+                                </form>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
                             <div class="col text-center">
                                 <br>
                                 <!-- <form method="get" action="./downloadable_elements/Text.docx"> -->
@@ -239,6 +258,11 @@
                                 </div>
                             </div>
                         </div>
+
+
+
+
+
                     </div>
                 </div>
 
