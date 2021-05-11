@@ -138,7 +138,22 @@ $(document).ready(function(){
 
             }
         }
+    
+        //And finally, check status of selected text/img arrays to see if empty or not, then update buttons accordingly
 
+        if (selectedText.length <= 0){ //if empty
+            $("#txt-btn").html("Download All Text");
+        }
+        else{ //if not empty (something is selected)
+            $("#txt-btn").html("Download Selected Text");
+        }
+
+        if (selectedImgs.length <= 0){
+            $("#img-btn").html("Download All Images");
+        }
+        else{
+            $("#img-btn").html("Download Selected Images");
+        }
     });    
 
     //https://phppot.com/javascript/how-to-export-html-to-word-document-with-javascript/
