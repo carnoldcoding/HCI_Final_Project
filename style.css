@@ -160,3 +160,7 @@ img {
     /*important! we need to change the direction for aligning elements*/
     justify-content: flex-end;
 }
+
+#sm-alert {
+    background-color: rgba(255, 255, 255, 0.5);
+}
