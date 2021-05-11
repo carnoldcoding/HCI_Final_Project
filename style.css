@@ -13,6 +13,15 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif
 }
 
+footer {
+    color:#ABC8C0;
+    background-color:rgba(180, 180, 180, .1);
+    padding:10px;
+    /* position: absolute; */
+    bottom:0;
+    width:100%;
+}
+
 .title {
     display: inline-block;
     font-size: 25px;
