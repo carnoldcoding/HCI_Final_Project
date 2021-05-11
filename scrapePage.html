@@ -167,10 +167,11 @@
                     <div class="col-8">
                         <div class="card example-1 scrollbar-ripe-malinka">
                             <div class="card-body">
-                                <div class="row-center">
+                                <div class="col">
                                     <h1 class="table-head" id="table-head">Data</h1>
                                     <table>
                                         <thead>
+                                            <h3 style=text-align:left>Twitter Accounts</h3>
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">First</th>
@@ -200,18 +201,60 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <style type="text/css">
+                                    td
+                                    {
+                                        padding:0 15px;
+                                    }
+                                    </style>
+
+                                <div class="col">
+                                    <table>
+                                        <thead>
+                                            <br>
+                                            <h3 style=text-align:left>Emails</h3>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">First</th>
+                                                <th scope="col">Last</th>
+                                                <th scope="col">Email</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Joe</td>
+                                                <td>Biden</td>
+                                                <td>jb@gmail.com</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>John</td>
+                                                <td>Austin</td>
+                                                <td>jAust@gmail.com</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Kevin</td>
+                                                <td>Carter</td>
+                                                <td>kevin@gmail.com</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                
+                                
                             </div>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="row">
                             <div class="col text-center label-thing">
-                                <label for="Table-Select"><b>Tables Present:</b></label>
+                                <label for="Table-Select"><b>Data Tables</b></label>
                                 <select name="Table-Select" id="Table-Select">
-                                    <option value="volvo">Names</option>
-                                    <option value="saab">Dates</option>
-                                    <option value="mercedes">Untitled A</option>
-                                    <option value="audi">Untitled B</option>
+                                    <option value="volvo">Twitter Handles</option>
+                                    <option value="volvo">Emails</option>
                                 </select>
                                 <br>
                             </div>
@@ -221,13 +264,12 @@
 
                         <div class="row">
                             <div class="col text-center label-thing">
-                                <label for="Table-Select"><b>Parse For:</b></label>
+                                <label for="Table-Select"><b>Search For:</b></label>
                                 <select name="Table-Select" id="Table-Select">
-                                    <option value="volvo">Titles</option>
-                                    <option value="saab">Names</option>
-                                    <option value="audi">Links</option>
-                                    <option value="mercedes">Numbers</option>
-                                    <option value="audi">Dollar Amounts</option>
+                                    <option value="volvo">First</option>
+                                    <option value="saab">Last</option>
+                                    <option value="audi">Handle</option>
+                                    <option value="audi">Email</option>
                                 </select>
                                 <br>
                                 <form onsubmit="doExport()">
