@@ -9,7 +9,7 @@ $(document).ready(function(){
         // ignore certain elements
         if(id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML' || tagName ==='I'
          || tagName ==='B' || !$(event.target).parent().hasClass("card-body") || id === "section1"
-         || $(event.target).hasClass("row-center")) { 
+         || $(event.target).hasClass("row-center") || $(event.target).hasClass("col") ) { 
             return;
         } 
 
