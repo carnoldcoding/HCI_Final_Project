@@ -55,6 +55,42 @@ $(document).ready(function(){
         });
     });
 
+    //Prevent the selector box from being 'sticky'
+    //Detects scrolling on any element and the window itself, then resets width and position of selector sides to 0
+        //and it works with the transition animation, which is neat!
+    $('*').add(document).scroll(function(event){
+        var elements = {                  
+            top: $('#selector-top'),
+            left: $('#selector-left'),
+            right: $('#selector-right'),
+            bottom: $('#selector-bottom')
+        };
+
+        elements.top.css({
+            left:  0,
+            top:   0,
+            width: 0
+        });
+        
+        elements.bottom.css({
+            top:   0,
+            left:  0,
+            width: 0
+        });
+        
+        elements.left.css({
+            left:   0,
+            top:    0,
+            height: 0
+        });
+        
+        elements.right.css({
+            left:   0,
+            top:    0,
+            height: 0
+        });
+    });
+
     //arrays for storing selected elements for later
     var selectedText = [];
     var selectedImgs = [];
