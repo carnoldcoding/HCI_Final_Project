@@ -250,7 +250,9 @@ function table1() {
     var table = document.getElementById("TableParse");
     var select1 = document.getElementById("Table-Select");
     var twitterHTML = '<thead>' +
-        '<h3 style="text-align:center" id="table-head">Twitter Handles</h3>' +
+        '<td>' +
+        '<h3 style="text-align:center">Twitter Handles</h3>' +
+        '</td>' +
         '<tr>' +
         '<th scope="col">#</th>' +
         '<th scope="col">First</th>' +
@@ -279,11 +281,12 @@ function table1() {
         '</tr>' +
         '</tbody>';
 
-    var emailHMTL = '<div class="col">' +
-        '<table>' +
+    var emailHMTL = '<table>' +
         '<thead>' +
         '<br>' +
-        '<h3 style=text-align:left>Emails</h3>' +
+        '<td>' +
+        '<h3 style="text-align:center">Emails</h3>' +
+        '</td>' +
         '<tr>' +
         '<th scope="col">#</th>' +
         '<th scope="col">First</th>' +
@@ -315,10 +318,17 @@ function table1() {
         '</div>';
 
     if (select1.value == "email") {
+        console.log(table.innerHTML);
+        table.innerHTML = "";
         table.innerHTML = emailHMTL;
+        console.log(table.innerHTML);
     } else if (select1.value == "twitter") {
+        console.log(table.innerHTML);
+        table.innerHTML = "";
         table.innerHTML = twitterHTML;
+        console.log(table.innerHTML);
     } else {
+        table.innerHTML = "";
         table.innerHTML = twitterHTML;
     }
 }
