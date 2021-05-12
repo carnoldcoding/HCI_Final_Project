@@ -34,7 +34,7 @@
                 </div>
                 <div class="row">
                     <form class="url-bar" action="homepage.html">
-                        <button type="submit" id="scrape" class="btn btn-primary">Scrape Again</button>
+                        <button type="submit" id="scrape" class="btn btn-primary">Scrape New Site</button>
                     </form>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                             <div class="col-10 text-center">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h3>Full Page</h3>
+                                        <h3 id="section3" class="text-left">Full Page</h3>
                                     </div>
 
                                 </div>
@@ -168,10 +168,11 @@
                         <div class="card example-1 scrollbar-ripe-malinka">
                             <div class="card-body">
                                 <div class="col">
-                                    <h1 class="table-head" id="table-head">Data</h1>
-                                    <table>
+                                    <h3 id="section3" class="text-left">Current Table</h3>
+                                    <br>
+                                    <table id="TableParse">
                                         <thead>
-                                            <h3 style=text-align:left>Twitter Accounts</h3>
+                                            <h3 style="text-align:center" id="table-head">Twitter Handles</h3>
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">First</th>
@@ -201,47 +202,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <style type="text/css">
-                                    td {
-                                        padding: 0 15px;
-                                    }
-                                </style>
-
-                                <div class="col">
-                                    <table>
-                                        <thead>
-                                            <br>
-                                            <h3 style=text-align:left>Emails</h3>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">First</th>
-                                                <th scope="col">Last</th>
-                                                <th scope="col">Email</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Joe</td>
-                                                <td>Biden</td>
-                                                <td>jb@gmail.com</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>John</td>
-                                                <td>Austin</td>
-                                                <td>jAust@gmail.com</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Kevin</td>
-                                                <td>Carter</td>
-                                                <td>kevin@gmail.com</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
 
 
                             </div>
@@ -250,12 +210,15 @@
                     <div class="col-4">
                         <div class="row">
                             <div class="col text-center label-thing">
-                                <label for="Table-Select"><b>Data Tables</b></label>
+                                <label for="Table-Select"><b>Data Tables Found</b></label>
                                 <select name="Table-Select" id="Table-Select">
-                                    <option value="volvo">Twitter Handles</option>
-                                    <option value="volvo">Emails</option>
+                                    <option value="twitter">Twitter Handles</option>
+                                    <option value="email">Emails</option>
                                 </select>
                                 <br>
+                                <form onclick="table1()">
+                                    <button type="submit" class="btn btn-primary">Select</button>
+                                </form>
                             </div>
 
                         </div>
@@ -263,27 +226,62 @@
 
                         <div class="row">
                             <div class="col text-center label-thing">
-                                <label for="Table-Select"><b>Search For:</b></label>
-                                <select name="Table-Select" id="Table-Select">
-                                    <option value="volvo">First</option>
-                                    <option value="saab">Last</option>
-                                    <option value="audi">Handle</option>
-                                    <option value="audi">Email</option>
-                                </select>
-                                <br>
+
+                                <label for="Table-Select"><b>Make Table of...</b></label>
+
+                                <div class="row">
+                                    <div class="col-6 text-left">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="Checkbox1" value="option1">
+                                            <label class="form-check-label" for="inlineCheckbox1">Names</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="Checkbox2" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox2">Links</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="Checkbox3" value="option3">
+                                            <label class="form-check-label" for="inlineCheckbox3">$ Amounts</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="Checkbox4" value="option4">
+                                            <label class="form-check-label" for="inlineCheckbox4">Emails</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 text-left">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="Checkbox5" value="option5">
+                                            <label class="form-check-label" for="inlineCheckbox5">Phone #s</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="Checkbox6" value="option6">
+                                            <label class="form-check-label" for="inlineCheckbox6">Twitter @s</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="Checkbox7" value="option7">
+                                            <label class="form-check-label" for="inlineCheckbox7">Titles/Headings</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="Checkbox8" value="option8">
+                                            <label class="form-check-label" for="inlineCheckbox8">Color Values (Hex)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col text-center label-thing"></div>
                                 <form onsubmit="doExport()">
-                                    <button type="submit" class="btn btn-primary">Search</button>
+                                    <button type="submit" class="btn btn-primary">Create</button>
                                 </form>
+
+
                             </div>
                         </div>
-
-
                         <div class="row">
                             <div class="col text-center">
                                 <br>
                                 <!-- <form method="get" action="./downloadable_elements/Text.docx"> -->
                                 <form onsubmit="doExport()">
-                                    <button type="submit" class="btn btn-primary">Download Table</button>
+                                    <button type="submit" class="btn btn-primary">Download Current Table</button>
                                 </form>
 
                             </div>
@@ -302,11 +300,23 @@
                     </div>
                 </div>
 
+
+
             </div>
+        </div>
 
         </div>
 
+        </div>
         <br>
+        <div class="container-fluid">
+            <div class="row text-center">
+                <form class="url-bar" action="homepage.html">
+                    <button type="submit" id="scrape" class="btn btn-primary">Scrape New Site</button>
+                </form>
+            </div>
+        </div>
+
         <br>
     </section>
     <footer>

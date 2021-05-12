@@ -14,12 +14,12 @@ body {
 }
 
 footer {
-    color:#ABC8C0;
-    background-color:rgba(180, 180, 180, .1);
-    padding:10px;
+    color: #ABC8C0;
+    background-color: rgba(180, 180, 180, .1);
+    padding: 10px;
     /* position: absolute; */
-    bottom:0;
-    width:100%;
+    bottom: 0;
+    width: 100%;
 }
 
 .title {
@@ -69,6 +69,21 @@ img {
 #section1 {
     width: 45%;
     border-bottom: solid #b4b4b4 1px;
+}
+
+#section3 {
+    width: 45%;
+    border-bottom: solid #b4b4b4 1px;
+}
+
+.form-check-label {
+    font-weight: 600;
+    font-size: medium;
+    vertical-align: top;
+}
+
+td {
+    padding: 0 15px;
 }
 
 
@@ -164,13 +179,14 @@ img {
 #sm-alert {
     background-color: rgba(255, 255, 255, 0.5);
 }
+
 .description {
     background-color: rgba(255, 255, 255, 0.25);
-    font-size: small;
-    width:fit-content;
-    margin:auto;
+    font-size: medium;
+    width: fit-content;
+    margin: auto;
     margin-top: -20px;
-    padding-left:5px;
-    padding-right:5px;
-    border-radius:2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 2px;
 }
