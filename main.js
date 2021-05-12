@@ -192,14 +192,6 @@ $(document).ready(function(){
 
         selectedImgs.forEach(function(selectedImgs){
               //https://stackoverflow.com/questions/17311645/download-image-with-javascript
-            // var a = $("<a>")
-            //     .attr("href", selectedImgs)
-            //     .attr("download", String(i).concat(".jpg"))
-            //     .appendTo("body");
-        
-            // a[0].click();
-            // a.remove();
-
             //https://stackoverflow.com/questions/283956/is-there-any-way-to-specify-a-suggested-filename-when-using-data-uri/16523173#16523173
             var link = document.createElement('a');
             link.download = String(i).concat(".jpg");
@@ -211,7 +203,7 @@ $(document).ready(function(){
         });
     }
 
-//This uses JSZip.js, JSZip-Utils.js, and FileSaver.js but they dont load correctly and crash for some reason
+//This uses JSZip.js, JSZip-Utils.js, and FileSaver.js but they dont load correctly and crash for some reason. Probably wouldn't work anyways. But this is how we'd download multiple files.
         // var zip = new JSZIP();
         // var count = 0;
         
