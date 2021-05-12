@@ -187,6 +187,7 @@ $(document).ready(function() {
 
         var i = 1;
 
+<<<<<<< HEAD
         selectedImgs.forEach(function(selectedImgs) {
             //https://stackoverflow.com/questions/17311645/download-image-with-javascript
             // var a = $("<a>")
@@ -197,6 +198,10 @@ $(document).ready(function() {
             // a[0].click();
             // a.remove();
 
+=======
+        selectedImgs.forEach(function(selectedImgs){
+              //https://stackoverflow.com/questions/17311645/download-image-with-javascript
+>>>>>>> 544a7221c11b68d94e9e5fd99f0208ce381c35ac
             //https://stackoverflow.com/questions/283956/is-there-any-way-to-specify-a-suggested-filename-when-using-data-uri/16523173#16523173
             var link = document.createElement('a');
             link.download = String(i).concat(".jpg");
@@ -208,6 +213,7 @@ $(document).ready(function() {
         });
     }
 
+<<<<<<< HEAD
     //This uses JSZip.js, JSZip-Utils.js, and FileSaver.js but they dont load correctly and crash for some reason
     // var zip = new JSZIP();
     // var count = 0;
@@ -229,6 +235,29 @@ $(document).ready(function() {
     //       }
     //     });
     // });
+=======
+//This uses JSZip.js, JSZip-Utils.js, and FileSaver.js but they dont load correctly and crash for some reason. Probably wouldn't work anyways. But this is how we'd download multiple files.
+        // var zip = new JSZIP();
+        // var count = 0;
+        
+        // //https://gist.github.com/c4software/981661f1f826ad34c2a5dc11070add0f
+        // selectedImgs.forEach(function(selectedImgs){
+        //     var filename = count;
+        //     // loading a file and add it in a zip file
+        //     JSZipUtils.getBinaryContent(selectedImgs, function (err, data) {
+        //        if(err) {
+        //           throw err; // or handle the error
+        //        }
+        //        zip.file(filename, data, {binary:true});
+        //        count++;
+        //        if (count == urls.length) {
+        //          zip.generateAsync({type:'blob'}).then(function(content) {
+        //             saveAs(content, "imgs.zip");
+        //          });
+        //       }
+        //     });
+        // });
+>>>>>>> 544a7221c11b68d94e9e5fd99f0208ce381c35ac
 
 });
 
