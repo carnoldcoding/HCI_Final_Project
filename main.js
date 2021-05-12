@@ -246,8 +246,6 @@ function doImgDL() {
 }
 
 
-
-
 function table1() {
     var table = document.getElementById("TableParse");
     var select1 = document.getElementById("Table-Select");
@@ -316,9 +314,9 @@ function table1() {
         '</table>' +
         '</div>';
 
-    if (select1.nodeValue == "email") {
+    if (select1.value == "email") {
         table.innerHTML = emailHMTL;
-    } else if (select1.nodeValue == "twitter") {
+    } else if (select1.value == "twitter") {
         table.innerHTML = twitterHTML;
     } else {
         table.innerHTML = twitterHTML;
