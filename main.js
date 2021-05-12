@@ -9,9 +9,10 @@ $(document).ready(function() {
         // ignore certain elements
         if (id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML' || tagName === 'I' ||
             tagName === 'B' || !$(event.target).parent().hasClass("card-body") || id === "section1" ||
-            $(event.target).hasClass("row-center") || $(event.target).hasClass("col")) {
+            $(event.target).hasClass("row-center") || $(event.target).hasClass("col") ) {
             return;
         }
+        
 
         //these elements form the sides of the outline around targeted/selected elements
         var elements = {
@@ -101,7 +102,7 @@ $(document).ready(function() {
         var tagName = event.target.tagName;
 
         // ignore certain elements
-        if (id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML' || $(event.target).hasClass("row-center")) {
+        if (id.indexOf('selector') !== -1 || tagName === 'BODY' || tagName === 'HTML' || $(event.target).hasClass("row-center") || $(event.target).hasClass("col") ){
             return;
         }
 
@@ -283,7 +284,6 @@ function table1() {
 
     var emailHMTL = '<table>' +
         '<thead>' +
-        '<br>' +
         '<td>' +
         '<h3 style="text-align:center">Emails</h3>' +
         '</td>' +
@@ -318,17 +318,10 @@ function table1() {
         '</div>';
 
     if (select1.value == "email") {
-        console.log(table.innerHTML);
-        table.innerHTML = "";
         table.innerHTML = emailHMTL;
-        console.log(table.innerHTML);
     } else if (select1.value == "twitter") {
-        console.log(table.innerHTML);
-        table.innerHTML = "";
         table.innerHTML = twitterHTML;
-        console.log(table.innerHTML);
     } else {
-        table.innerHTML = "";
         table.innerHTML = twitterHTML;
     }
 }
